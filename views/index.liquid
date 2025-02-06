@@ -6,43 +6,25 @@
     
     <h1>{{ person.name }}</h1>
     
-    <p><em>Afgestudeerd interieur adviseur</em></p>
-    <p><em>Creatieve Frontend Developer in spé</em></p>
-    
-    <button>
-      <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <title>Wijzig layout</title>
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M4 8v-2a2 2 0 0 1 2 -2h2"></path>
-        <path d="M4 16v2a2 2 0 0 0 2 2h2"></path>
-        <path d="M16 4h2a2 2 0 0 1 2 2v2"></path>
-        <path d="M16 20h2a2 2 0 0 0 2 -2v-2"></path>
-      </svg>
-      <svg width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M15 19v-2a2 2 0 0 1 2 -2h2"></path>
-        <path d="M15 5v2a2 2 0 0 0 2 2h2"></path>
-        <path d="M5 15h2a2 2 0 0 1 2 2v2"></path>
-        <path d="M5 9h2a2 2 0 0 0 2 -2v-2"></path>
-      </svg>
-    </button>
+    <p><em>Frontend design & development</em></p>    
+
     
   </header>
 
   <img src="20230203-CZ-HappyHome-28407.jpg" alt="" width="800" height="800">
 
-  <dl>
-    <dt>Reizen</dt>
-    <dd>✈✈✈</dd>
-    
-    <dt>bijbaantje bij de bakker</dt>
-    <dd>☺☺☺</dd>
-    
-    <dt>Skeeleren</dt>
-    <dd>⛸⛸⛸</dd>
-  </dl>
+  <div>
+    <p>Jarig op: <br> {{ person.birthdate | date: "%d-%m-%Y" }}</p>
+    <p>Persoonlijkheid: {{custom.Persoonlijkheid}}</p>
 
-  <p>Ik vind het irritant als websites niet soepel werken,<br> daarom wil ik het zelf beter kunnen! ☺  </p>
+  </div>
+
+  <p> Contact </p>
+  <ul>
+    <li>06 10154686</li>
+    <li>anouk.de.rooij@hva.nl</li>
+    <li><a href="https://anoukderooij24.github.io/i-love-web/">I love web website</a> </li>
+  </ul>
   
 </article>
 
