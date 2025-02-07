@@ -15,8 +15,7 @@
 
   <div>
     <p>Jarig op: <br> {{ person.birthdate | date: "%d-%m-%Y" }}</p>
-    <p>Persoonlijkheid: {{custom.Persoonlijkheid}}</p>
-
+    <p>Persoonlijkheid: {{ custom.Persoonlijkheid }}</p>
   </div>
 
   <p> Contact </p>
@@ -28,7 +27,8 @@
   
 </article>
 
-<script src="scripts/script.js"></script>
+<details><summary>Data</summary><pre>{{ custom | json:4 }}</pre></details>
+<script src="index.js"></script>
     
 
 {% render 'partials/foot.liquid' %}

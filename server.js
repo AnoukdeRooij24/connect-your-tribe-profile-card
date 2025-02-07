@@ -38,17 +38,16 @@ app.set('views', './views')
 // Om Views weer te geven, heb je Routes nodig
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 // In je visitekaartje was dit waarschijnlijk index.html
+// app.get('/', async function (request, response) {
+//    // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
+//    response.render('index.liquid', {person: personResponseJSON.data})
+// })
+
+const customData = JSON.parse(personResponseJSON.data.custom)
 app.get('/', async function (request, response) {
-   // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
-   response.render('index.liquid', {person: personResponseJSON.data})
+  // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
+  response.render('index.liquid', {person: personResponseJSON.data, custom: customData})
 })
-
-const custom = JSON.parse(personResponseJSON.data.custom)
-app.get('/oefenen', async function (request, response) {
-  // Render oefenen.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
-  response.render('oefenen.liquid', {person: personResponseJSON.data, custom: custom})
-})
-
 
 // const custom = JSON.parse(personResponseJSON.data.custom)
 // app.get('/oefenen', async function (request, response) {
@@ -80,4 +79,4 @@ app.listen(app.get('port'), function () {
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
 
-console.log(custom)
+console.log(customData)
